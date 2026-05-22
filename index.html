@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溢设计 | 极简室内设计分享</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #888;
+        }
+        /* Hero 首屏 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 8%;
+        }
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #999;
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 3rem;
+            font-size: 2rem;
+            color: #ccc;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+        /* 内容区 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 8%;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background-color: #333;
+        }
+        /* 文章网格 */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        .article-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background-color: #f5f5f5;
+        }
+        .article-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .article-date {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        /* 关于区 */
+        .about {
+            background-color: #fafafa;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-title {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .about-text {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #666;
+            line-height: 2;
+        }
+        /* 页脚 */
+        footer {
+            padding: 4rem 8%;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 300;
+        }
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">溢设计</div>
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#articles">文章</a>
+            <a href="#about">关于</a>
+            <a href="#contact">联系</a>
+        </div>
+    </nav>
+
+    <!-- Hero 首屏 -->
+    <section class="hero" id="home">
+        <h1 class="hero-title">溢设计</h1>
+        <p class="hero-subtitle">用极简与留白，重新定义空间美学</p>
+        <p class="hero-desc">分享室内设计知识 · 探索空间的呼吸感</p>
+        <div class="scroll-down">↓</div>
+    </section>
+
+    <!-- 文章展示区 -->
+    <section class="container" id="articles">
+        <h2 class="section-title">精选内容</h2>
+        <div class="articles-grid">
+            <!-- 示例卡片，可复制扩展 -->
+            <div class="article-card">
+                <div class="article-img"></div>
+                <h3 class="article-title">极简风客厅：如何用留白打造高级感</h3>
+                <p class="article-date">2026-05-20</p>
+            </div>
+            <div class="article-card">
+                <div class="article-img"></div>
+                <h3 class="article-title">5个室内设计配色技巧，让空间更显通透</h3>
+                <p class="article-date">2026-05-15</p>
+            </div>
+            <div class="article-card">
+                <div class="article-img"></div>
+                <h3 class="article-title">小户型极简收纳：告别杂乱的3个核心原则</h3>
+                <p class="article-date">2026-05-10</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于区 -->
+    <section class="about" id="about">
+        <div class="container about-content">
+            <h2 class="about-title">关于溢设计</h2>
+            <div class="about-text">
+                <p>一个分享设计知识的公众号，专注室内设计风格解析、极简美学、空间留白技巧。</p>
+                <p>累计51篇原创内容，用克制的设计语言，带你感受空间的呼吸感与高级感。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="footer-links">
+            <a href="#">关注公众号</a>
+            <a href="#">往期文章</a>
+            <a href="#">联系我</a>
+        </div>
+        <p class="copyright">© 2026 溢设计 All Rights Reserved</p>
+    </footer>
+</body>
+</html>
